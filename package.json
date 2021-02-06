@@ -1,0 +1,20 @@
+{
+  "name": "com.joaoborks.tools",
+  "version": "1.0.0",
+  "displayName": "Unity Tools",
+  "description": "My own collection of Unity Engine tools, extensions and helpers.",
+  "unity": "2018.4",
+  "unityRelease": "0f1",
+  "keywords": [],
+  "author": {
+    "name": "Jo\u00e3o Borks",
+    "email": "joao.borks@gmail.com.br",
+    "url": "https://github.com/JoaoBorks"
+  },
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.textmeshpro": "2.1.1",
+    "com.unity.ugui": "1.0.0"
+  },
+  "type": "tool"
+}
