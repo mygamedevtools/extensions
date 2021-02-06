@@ -1,8 +1,8 @@
 {
-  "name": "com.joaoborks.tools",
+  "name": "com.myunitytools",
   "version": "1.0.0",
-  "displayName": "Unity Tools",
-  "description": "My own collection of Unity Engine tools, extensions and helpers.",
+  "displayName": "My Unity Tools",
+  "description": "A personal collection of Unity Engine tools, extensions and helpers.",
   "unity": "2018.4",
   "unityRelease": "0f1",
   "keywords": [],
@@ -13,7 +13,6 @@
   },
   "hideInEditor": false,
   "dependencies": {
-    "com.unity.textmeshpro": "2.1.1",
     "com.unity.ugui": "1.0.0"
   },
   "type": "tool"

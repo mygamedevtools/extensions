@@ -8,7 +8,7 @@
 using UnityEngine;
 using System;
 
-namespace UnityTools.Attributes
+namespace MyUnityTools.Attributes
 {
     [AttributeUsage(AttributeTargets.Field, Inherited = true)]
     public sealed class ReadOnlyAttribute : PropertyAttribute { }

@@ -8,7 +8,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UnityTools.Attributes
+namespace MyUnityTools.Attributes
 {
     [CustomPropertyDrawer(typeof(SceneFieldAttribute))]
     public class SceneFieldDrawer : PropertyDrawer
