@@ -33,12 +33,36 @@ namespace MyUnityTools.Extensions
                 Object.Destroy(objects[i]);
         }
 
-        public static Coroutine DelayedCall(this MonoBehaviour monoBehaviour, float delay, System.Action call)
+        public static Coroutine DelayCallInPhysicsFrames(this MonoBehaviour monoBehaviour, int frames, System.Action call)
         {
-            return monoBehaviour.StartCoroutine(delayedCallRoutine());
-            IEnumerator delayedCallRoutine()
+            return monoBehaviour.StartCoroutine(delayCallInPhysicsFramesRoutine());
+            IEnumerator delayCallInPhysicsFramesRoutine()
             {
-                yield return new WaitForSeconds(delay);
+                var delay = new WaitForFixedUpdate();
+                for (int i = 0; i < frames; i++)
+                    yield return delay;
+                call?.Invoke();
+            }
+        }
+
+        public static Coroutine DelayCallInFrames(this MonoBehaviour monoBehaviour, int frames, System.Action call)
+        {
+            return monoBehaviour.StartCoroutine(delayCallInFramesRoutine());
+            IEnumerator delayCallInFramesRoutine()
+            {
+                var delay = new WaitForEndOfFrame();
+                for (int i = 0; i < frames; i++)
+                    yield return delay;
+                call?.Invoke();
+            }
+        }
+
+        public static Coroutine DelayCall(this MonoBehaviour monoBehaviour, float delaySeconds, System.Action call)
+        {
+            return monoBehaviour.StartCoroutine(delayCallRoutine());
+            IEnumerator delayCallRoutine()
+            {
+                yield return new WaitForSeconds(delaySeconds);
                 call?.Invoke();
             }
         }
