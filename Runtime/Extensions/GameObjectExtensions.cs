@@ -11,14 +11,14 @@ namespace MyUnityTools.Extensions
 {
     public static class GameObjectExtensions
     {
-        public static void SetChildrenLayerRecursevely(this Transform transform, int layer)
+        public static void SetChildrenLayerRecursively(this Transform transform, int layer)
         {
             transform.gameObject.layer = layer;
             if (transform.childCount > 0)
             {
                 var length = transform.childCount;
                 for (int i = 0; i < length; i++)
-                    transform.GetChild(i).SetChildrenLayerRecursevely(layer);
+                    transform.GetChild(i).SetChildrenLayerRecursively(layer);
             }
         }
 

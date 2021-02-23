@@ -7,25 +7,28 @@
 using UnityEditor;
 using UnityEngine;
 
-public class GroupGameObjects
+namespace MyUnityTools
 {
-    [MenuItem("Tools/Group Selected Objects %g")]
-    public static void GroupSelectedObjects()
+    public class GroupGameObjects
     {
-        var objects = Selection.gameObjects;
-        var length = objects.Length;
-        if (length <= 1)
-            return;
+        [MenuItem("Tools/Group Selected Objects %g")]
+        public static void GroupSelectedObjects()
+        {
+            var objects = Selection.gameObjects;
+            var length = objects.Length;
+            if (length <= 1)
+                return;
 
-        var parent = new GameObject("Group");
-        int i = 0;
-        parent.transform.SetParent(objects[i].transform.parent);
-        var bounds = new Bounds(objects[i].transform.position, Vector3.zero);
-        for (i = 1; i < length; i++)
-            bounds.Encapsulate(objects[i].transform.position);
-        parent.transform.position = bounds.center;
-        for (i = 0; i < length; i++)
-            objects[i].transform.SetParent(parent.transform, true);
-        Selection.activeGameObject = parent;
+            var parent = new GameObject("Group");
+            int i = 0;
+            parent.transform.SetParent(objects[i].transform.parent);
+            var bounds = new Bounds(objects[i].transform.position, Vector3.zero);
+            for (i = 1; i < length; i++)
+                bounds.Encapsulate(objects[i].transform.position);
+            parent.transform.position = bounds.center;
+            for (i = 0; i < length; i++)
+                objects[i].transform.SetParent(parent.transform, true);
+            Selection.activeGameObject = parent;
+        }
     }
 }
