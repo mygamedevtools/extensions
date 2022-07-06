@@ -108,7 +108,6 @@ public static class CheatsEnabler
         return !ScriptingDefineSymbolsHelper.HasScriptingDefineSymbol(_cheatsDefine);
     }
 
-
     [MenuItem("Tools/Remove Cheats")]
     public static void RemoveCheats()
     {
@@ -121,7 +120,6 @@ public static class CheatsEnabler
         return ScriptingDefineSymbolsHelper.HasScriptingDefineSymbol(_cheatsDefine);
     }
 }
-
 ```
 
 ### :large_blue_diamond: Extensions
