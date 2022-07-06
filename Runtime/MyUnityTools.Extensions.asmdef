@@ -1,11 +1,8 @@
 {
-    "name": "MyUnityTools.Editor",
-    "references": [
-        "GUID:3f9768fbafbb22249a3a775672bd5fce"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "MyUnityTools.Extensions",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

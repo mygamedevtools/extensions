@@ -28,7 +28,7 @@ namespace MyUnityTools.Extensions
                 for (int j = 0; j < jaggedArray[i].Length; j++)
                     sb.AppendFormat("  - [{0}] {1}\n", j, jaggedArray[i][j].ToString());
             }
-            Debug.Log(sb);
+            Debug.Log(sb.ToString());
         }
 
         static string CollectionToString<T>(IEnumerable<T> collection, int identLevel = 0)
