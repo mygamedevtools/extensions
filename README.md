@@ -1,6 +1,6 @@
-![License](https://img.shields.io/github/license/joaoborks/myunitytools)
-![Release](https://img.shields.io/github/v/release/joaoborks/myunitytools?sort=semver)
-![Last Commit](https://img.shields.io/github/last-commit/joaoborks/myunitytools)
+![License](https://img.shields.io/github/license/joaoborks/myunitytools-extensions)
+![Release](https://img.shields.io/github/v/release/joaoborks/myunitytools-extensions?sort=semver)
+![Last Commit](https://img.shields.io/github/last-commit/joaoborks/myunitytools-extensions)
 
 My Unity Tools
 ===
@@ -12,7 +12,7 @@ Installation
 
 #### - For 2019.1+: [Installing from a git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
 You can open the Package Manager and then click on the `+` button on the top left corner. 
-From there select `Add package from git URL...`, type `https://github.com/joaoborks/myunitytools.git` and click `Add`. 
+From there select `Add package from git URL...`, type `https://github.com/joaoborks/myunitytools-extensions.git` and click `Add`. 
 The package will be imported by the Package Manager.
 
 #### - Other Package Manager supported versions: Add manually to manifest
@@ -20,7 +20,7 @@ You should add this to your `manifest.json` under the `Packages` folder on the r
 ```
 {
   "dependencies": {
-	  "com.joaoborks.fpscounter": "https://github.com/joaoborks/myunitytools.git"
+	  "com.myunitytools.extensios": "https://github.com/joaoborks/myunitytools-extensions.git"
   }
 }
 ```
@@ -78,11 +78,51 @@ public class MyClass : MonoBehaviour
 
 ### :large_blue_diamond: Tools
 
-We have only **one** tool available:
+We have **two** tools available:
 
 #### :large_orange_diamond: Group Game Objects
 
 Simply press <kbd>Ctrl</kbd> + <kbd>G</kbd> to group the selected game objects. It creates a parent game object in the center of the selected objects.
+
+#### :large_orange_diamond: Scripting Define Symbols Helper
+
+You can use the `ScriptingDefineSymbolsHelper` to easily add or remove scripting define symbols to your project. For example:
+
+```csharp
+using MyUnityTools.Extensions;
+using UnityEditor;
+
+public static class CheatsEnabler
+{
+    const string _cheatsDefine = "ENABLE_CHEATS";
+
+    [MenuItem("Tools/Add Cheats")]
+    public static void AddCheats()
+    {
+        ScriptingDefineSymbolsHelper.AddScriptingDefineSymbol(_cheatsDefine);
+    }
+
+    [MenuItem("Tools/Add Cheats", validate = true)]
+    public static bool AddCheatsValidate()
+    {
+        return !ScriptingDefineSymbolsHelper.HasScriptingDefineSymbol(_cheatsDefine);
+    }
+
+
+    [MenuItem("Tools/Remove Cheats")]
+    public static void RemoveCheats()
+    {
+        ScriptingDefineSymbolsHelper.RemoveScriptingDefineSymbol(_cheatsDefine);
+    }
+
+    [MenuItem("Tools/Remove Cheats", validate = true)]
+    public static bool RemoveCheatsValidate()
+    {
+        return ScriptingDefineSymbolsHelper.HasScriptingDefineSymbol(_cheatsDefine);
+    }
+}
+
+```
 
 ### :large_blue_diamond: Extensions
 
@@ -178,4 +218,4 @@ public class MyClass : MonoBehaviour
 
 ---
 
-Don't hesitate to create [issues](https://github.com/joaoborks/myunitytools/issues) for suggestions and bugs. Have fun!
+Don't hesitate to create [issues](https://github.com/joaoborks/myunitytools-extensions/issues) for suggestions and bugs. Have fun!
