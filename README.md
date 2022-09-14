@@ -1,8 +1,8 @@
-![License](https://img.shields.io/github/license/joaoborks/myunitytools-extensions)
-![Release](https://img.shields.io/github/v/release/joaoborks/myunitytools-extensions?sort=semver)
-![Last Commit](https://img.shields.io/github/last-commit/joaoborks/myunitytools-extensions)
+![License](https://img.shields.io/github/license/myunitytools/extensions)
+![Release](https://img.shields.io/github/v/release/myunitytools/extensions?sort=semver)
+![Last Commit](https://img.shields.io/github/last-commit/myunitytools/extensions)
 
-My Unity Tools
+Extensions
 ===
 
 _A personal collection of Unity Engine tools, extensions, and helpers._
@@ -12,7 +12,7 @@ Installation
 
 #### - For 2019.1+: [Installing from a git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
 You can open the Package Manager and then click on the `+` button on the top left corner. 
-From there select `Add package from git URL...`, type `https://github.com/joaoborks/myunitytools-extensions.git` and click `Add`. 
+From there select `Add package from git URL...`, type `https://github.com/myunitytools/extensions.git` and click `Add`. 
 The package will be imported by the Package Manager.
 
 #### - Other Package Manager supported versions: Add manually to manifest
@@ -20,7 +20,7 @@ You should add this to your `manifest.json` under the `Packages` folder on the r
 ```
 {
   "dependencies": {
-	  "com.myunitytools.extensios": "https://github.com/joaoborks/myunitytools-extensions.git"
+	  "com.myunitytools.extensios": "https://github.com/myunitytools/extensions.git"
   }
 }
 ```
@@ -216,4 +216,4 @@ public class MyClass : MonoBehaviour
 
 ---
 
-Don't hesitate to create [issues](https://github.com/joaoborks/myunitytools-extensions/issues) for suggestions and bugs. Have fun!
+Don't hesitate to create [issues](https://github.com/myunitytools/extensions/issues) for suggestions and bugs. Have fun!
