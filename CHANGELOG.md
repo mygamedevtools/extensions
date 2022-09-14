@@ -3,6 +3,10 @@ Change Log
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0] - 2022-09-13
+- Changed: Moved repository to My Unity Tools organization
+- Changed: Updated package name and author 
+
 ## [1.1.0] - 2022-07-06
 - Changed: Updated package name to `My Unity Tools - Extensions`.
 - Changed: Updated asmdef files to add the `Extensions` namespace: `MyUnityTools` -> `MyUnityTools.Extensions`.
