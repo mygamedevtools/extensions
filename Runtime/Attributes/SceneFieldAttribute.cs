@@ -7,7 +7,7 @@
 using System;
 using UnityEngine;
 
-namespace MyUnityTools.Attributes
+namespace MyGameDevTools.Attributes
 {
     [AttributeUsage(AttributeTargets.Field, Inherited = true)]
     public sealed class SceneFieldAttribute : PropertyAttribute { }

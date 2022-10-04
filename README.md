@@ -1,6 +1,6 @@
-![License](https://img.shields.io/github/license/myunitytools/extensions)
-![Release](https://img.shields.io/github/v/release/myunitytools/extensions?sort=semver)
-![Last Commit](https://img.shields.io/github/last-commit/myunitytools/extensions)
+![License](https://img.shields.io/github/license/mygamedevtools/extensions)
+![Release](https://img.shields.io/github/v/release/mygamedevtools/extensions?sort=semver)
+![Last Commit](https://img.shields.io/github/last-commit/mygamedevtools/extensions)
 
 Extensions
 ===
@@ -12,7 +12,7 @@ Installation
 
 #### - For 2019.1+: [Installing from a git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
 You can open the Package Manager and then click on the `+` button on the top left corner. 
-From there select `Add package from git URL...`, type `https://github.com/myunitytools/extensions.git` and click `Add`. 
+From there select `Add package from git URL...`, type `https://github.com/mygamedevtools/extensions.git` and click `Add`. 
 The package will be imported by the Package Manager.
 
 #### - Other Package Manager supported versions: Add manually to manifest
@@ -20,7 +20,7 @@ You should add this to your `manifest.json` under the `Packages` folder on the r
 ```
 {
   "dependencies": {
-	  "com.myunitytools.extensios": "https://github.com/myunitytools/extensions.git"
+	  "com.mygamedevtools.extensios": "https://github.com/mygamedevtools/extensions.git"
   }
 }
 ```
@@ -89,7 +89,7 @@ Simply press <kbd>Ctrl</kbd> + <kbd>G</kbd> to group the selected game objects. 
 You can use the `ScriptingDefineSymbolsHelper` to easily add or remove scripting define symbols to your project. For example:
 
 ```csharp
-using MyUnityTools.Extensions;
+using MyGameDevTools.Extensions;
 using UnityEditor;
 
 public static class CheatsEnabler
@@ -216,4 +216,4 @@ public class MyClass : MonoBehaviour
 
 ---
 
-Don't hesitate to create [issues](https://github.com/myunitytools/extensions/issues) for suggestions and bugs. Have fun!
+Don't hesitate to create [issues](https://github.com/mygamedevtools/extensions/issues) for suggestions and bugs. Have fun!
