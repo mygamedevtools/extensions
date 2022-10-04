@@ -7,7 +7,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MyUnityTools.Extensions
+namespace MyGameDevTools.Extensions
 {
     public class GroupGameObjects
     {

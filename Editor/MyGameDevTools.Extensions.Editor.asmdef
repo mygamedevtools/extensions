@@ -1,5 +1,5 @@
 {
-    "name": "MyUnityTools.Extensions.Editor",
+    "name": "MyGameDevTools.Extensions.Editor",
     "rootNamespace": "",
     "references": [
         "GUID:86cc26284feb78849ab751e241df0117"

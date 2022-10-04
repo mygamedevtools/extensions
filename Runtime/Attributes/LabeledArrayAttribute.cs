@@ -8,7 +8,7 @@
 using UnityEngine;
 using System;
 
-namespace MyUnityTools.Attributes
+namespace MyGameDevTools.Attributes
 {
     [AttributeUsage(AttributeTargets.Field, Inherited = true)]
     public sealed class LabeledArrayAttribute : PropertyAttribute

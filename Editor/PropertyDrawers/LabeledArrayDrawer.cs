@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 
-namespace MyUnityTools.Attributes
+namespace MyGameDevTools.Attributes
 {
     [CustomPropertyDrawer(typeof(LabeledArrayAttribute))]
     public class LabeledArrayDrawer : PropertyDrawer

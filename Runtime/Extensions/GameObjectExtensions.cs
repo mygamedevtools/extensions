@@ -7,7 +7,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace MyUnityTools.Extensions
+namespace MyGameDevTools.Extensions
 {
     public static class GameObjectExtensions
     {

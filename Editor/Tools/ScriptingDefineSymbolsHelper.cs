@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
 
-namespace MyUnityTools.Extensions
+namespace MyGameDevTools.Extensions
 {
     public static class ScriptingDefineSymbolsHelper
     {
