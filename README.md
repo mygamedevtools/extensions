@@ -11,7 +11,7 @@ _A personal collection of Unity Engine tools, extensions, and helpers._
 Installation
 ---
 
-### 1. OpenUPM
+### OpenUPM
 
 This package is available on the [OpenUPM](https://openupm.com/packages/com.mygamedevtools.extensions) registry. Add the package via the [openupm-cli](https://github.com/openupm/openupm-cli):
 
@@ -19,24 +19,13 @@ This package is available on the [OpenUPM](https://openupm.com/packages/com.myga
 openupm add com.mygamedevtools.extensions
 ```
 
-Or, manually:
+### [Installing from Git](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
 
 1. Open `Edit/Project Settings/Package Manager`.
-2. Add a new **Scoped Registry** (or edit the existing OpenUPM entry):
-    * Name `OpenUPM`
-    * URL `https://package.openupm.com`
-    * Scope(s) `com.mygamedevtools`
-6. Click `Save` (or `Apply`).
-7. Open `Window/Package Manager`.
-8. Click <kbd>+</kbd>.
-9. Select `Add package by name...` or `Add package from git URL...`.
-10. Paste `com.mygamedevtools.extensions` into name.
-12. Click `Add`.
-
-### 2. [Unity Package Manager](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
-
-You can open the Package Manager and then click on the <kbd>+</kbd> button on the top left corner. 
-From there select `Add package from git URL...`, type `https://github.com/mygamedevtools/extensions.git` and click `Add`.
+2. Click <kbd>+</kbd>.
+3. Select `Add package from git URL...`.
+4. Paste `com.mygamedevtools.extensions` into name.
+5. Click `Add`.
 
 Usage
 ---
