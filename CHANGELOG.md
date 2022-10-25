@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/mygamedevtools/extensions/compare/1.3.1...1.4.0) (2022-10-25)
+
+
+### Bug Fixes
+
+* Add missing persist-credentials to workflow ([cd288e6](https://github.com/mygamedevtools/extensions/commit/cd288e6edaa8ff57c1eb6dbe8c59ed5083669d7e))
+
+
+### Features
+
+* Add CI configuration ([27eb0fc](https://github.com/mygamedevtools/extensions/commit/27eb0fcbff3c8ee864757f1e54c95014b18f6505))
+
 ## [1.3.1] - 2022-10-24
 - Added: OpenUPM documentation.
 
