@@ -1,12 +1,10 @@
 {
-    "name": "MyGameDevTools.Extensions.Editor",
+    "name": "MyGameDevTools.Attributes.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:86cc26284feb78849ab751e241df0117"
+        "GUID:883381e107e31564e9f64c4ce3f824cd"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

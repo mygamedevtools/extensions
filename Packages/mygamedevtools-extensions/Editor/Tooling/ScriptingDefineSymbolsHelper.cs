@@ -1,9 +1,15 @@
+/**
+ * ScriptingDefineSymbolsHelper.cs
+ * Created by: João Borks [joao.borks@gmail.com]
+ * Created on: 2022-07-06
+ */
+
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
 
-namespace MyGameDevTools.Extensions
+namespace MyGameDevTools.Tooling
 {
     public static class ScriptingDefineSymbolsHelper
     {

@@ -1,13 +1,13 @@
 /**
  * GroupGameObjects.cs
- * Created by: Jo�o Borks [joao.borks@gmail.com]
+ * Created by: João Borks [joao.borks@gmail.com]
  * Created on: 12/5/2020 (en-US)
  */
 
 using UnityEditor;
 using UnityEngine;
 
-namespace MyGameDevTools.Extensions
+namespace MyGameDevTools.Tooling
 {
     public class GroupGameObjects
     {
