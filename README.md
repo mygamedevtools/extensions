@@ -1,12 +1,40 @@
-![License](https://img.shields.io/github/license/mygamedevtools/extensions)
-[![openupm](https://img.shields.io/npm/v/com.mygamedevtools.extensions?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.mygamedevtools.extensions/)
-![Release](https://img.shields.io/github/v/release/mygamedevtools/extensions?sort=semver)
-![Last Commit](https://img.shields.io/github/last-commit/mygamedevtools/extensions)
-
+<h1 align = center>
 Extensions
-===
+</h1>
 
-_A personal collection of Unity Engine tools, extensions, and helpers._
+<p align=center>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/mygamedevtools/extensions" />
+  </a>
+  <a href="https://codecov.io/github/mygamedevtools/extensions">
+    <img src="https://codecov.io/github/mygamedevtools/extensions/branch/main/graph/badge.svg?token=J4ISVSF390" />
+  </a>
+  <a href="https://github.com/mygamedevtools/extensions/actions/workflows/test.yml">
+    <img src="https://github.com/mygamedevtools/extensions/actions/workflows/test.yml/badge.svg" />
+  </a>
+  <a href="https://github.com/mygamedevtools/extensions/actions/workflows/release.yml">
+    <img src="https://github.com/mygamedevtools/extensions/actions/workflows/release.yml/badge.svg" />
+  </a>
+  <a href="https://github.com/mygamedevtools/extensions/commits/">
+    <img src="https://img.shields.io/github/last-commit/mygamedevtools/extensions" />
+  </a>
+</p>
+
+<p align=center>
+  <a href="https://openupm.com/packages/com.mygamedevtools.extensions/">
+    <img src="https://img.shields.io/npm/v/com.mygamedevtools.extensions?label=openupm&registry_uri=https://package.openupm.com" />
+  </a>
+  <a href="https://github.com/mygamedevtools/extensions/releases/latest">
+    <img src="https://img.shields.io/github/v/release/mygamedevtools/extensions?sort=semver" />
+  </a>
+  <a href="https://github.com/semantic-release/semantic-release">
+    <img src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release" />
+  </a>
+</p>
+
+<p align=center><i>
+A personal collection of Unity Engine tools, extensions, and helpers.
+</i></p>
 
 Installation
 ---
