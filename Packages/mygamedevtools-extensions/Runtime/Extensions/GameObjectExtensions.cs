@@ -52,17 +52,21 @@ namespace MyGameDevTools.Extensions
             {
                 var delay = new WaitForEndOfFrame();
                 for (int i = 0; i < frames; i++)
+#if UNITY_EDITOR
+                    yield return null;
+#else
                     yield return delay;
+#endif
                 call?.Invoke();
             }
         }
 
-        public static Coroutine DelayCall(this MonoBehaviour monoBehaviour, float delaySeconds, System.Action call)
+        public static Coroutine DelayCall(this MonoBehaviour monoBehaviour, float delaySeconds, System.Action call, bool realtime = false)
         {
             return monoBehaviour.StartCoroutine(delayCallRoutine());
             IEnumerator delayCallRoutine()
             {
-                yield return new WaitForSeconds(delaySeconds);
+                yield return realtime ? new WaitForSecondsRealtime(delaySeconds) : new WaitForSeconds(delaySeconds);
                 call?.Invoke();
             }
         }
