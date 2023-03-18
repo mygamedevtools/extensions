@@ -7,31 +7,14 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
 namespace MyGameDevTools.Extensions.Tests
 {
-    public class GameObjectExtensionsTests
+    public class GameObjectExtensionsTests : ObjectCleanupTestBase
     {
-        GameObject[] _rootGameObjects;
-
-        [OneTimeSetUp]
-        public void OneTimeSetup()
-        {
-            _rootGameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
-        }
-
-        [TearDown]
-        public void CleanupGameObjects()
-        {
-            var objectsToDestroy = SceneManager.GetActiveScene().GetRootGameObjects().Except(_rootGameObjects).ToArray();
-            for (int i = objectsToDestroy.Length - 1; i >= 0; i--)
-                Object.Destroy(objectsToDestroy[i]);
-        }
-
         [Test]
         public void SetChildrenLayer()
         {
@@ -73,21 +56,6 @@ namespace MyGameDevTools.Extensions.Tests
             yield return null; // Objects are destroyed at the end of the current update loop
 
             Assert.AreEqual(0, gameObject.GetComponents<SphereCollider>().Length);
-        }
-
-        [UnityTest]
-        public IEnumerator DestroyObjects()
-        {
-            var objectCount = 10;
-            for (int i = 0; i < objectCount; i++)
-                GameObject.CreatePrimitive(PrimitiveType.Cube);
-
-            var objects = Object.FindObjectsOfType<MeshFilter>().Select(m => m.gameObject).ToArray();
-            GameObjectExtensions.DestroyObjects(objects);
-
-            yield return null; // Objects are destroyed at the end of the current update loop
-
-            Assert.AreEqual(0, Object.FindObjectsOfType<MeshFilter>().Length);
         }
 
         [UnityTest]
@@ -158,6 +126,25 @@ namespace MyGameDevTools.Extensions.Tests
             Assert.False(mask.HasLayer(LayerMask.NameToLayer("Ignore Raycast")));
         }
 
+        [Test]
+        public void GetRootGameObjects()
+        {
+            var tempScene = SceneManager.CreateScene("temp");
+
+            var newObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            SceneManager.MoveGameObjectToScene(newObject, tempScene);
+
+            var activeSceneRootObjects = GameObjectExtensions.GetRootGameObjects();
+            Assert.AreEqual(activeSceneRootObjects.Count, _rootGameObjects.Length);
+            for (int i = 0; i < activeSceneRootObjects.Count; i++)
+                Assert.AreEqual(_rootGameObjects[i], activeSceneRootObjects[i]);
+
+            var allScenesRootObjects = GameObjectExtensions.GetRootGameObjects(true);
+            Assert.AreEqual(allScenesRootObjects.Count, _rootGameObjects.Length + 1);
+
+            SceneManager.UnloadSceneAsync(tempScene);
+        }
+
         public void BuildRandomGameObjectHierarchy(int objectCount, int parentCount, out GameObject[] hierarchy, out GameObject root)
         {
             Assert.NotZero(objectCount);
@@ -200,4 +187,8 @@ namespace MyGameDevTools.Extensions.Tests
     }
 
     public class TestBehavior : MonoBehaviour { }
+
+    public class TestInterfaceImplementor : MonoBehaviour, ITestInterface { }
+
+    public interface ITestInterface { }
 }

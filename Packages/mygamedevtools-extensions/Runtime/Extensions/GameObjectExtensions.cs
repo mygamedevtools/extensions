@@ -5,7 +5,9 @@
  */
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MyGameDevTools.Extensions
 {
@@ -22,16 +24,9 @@ namespace MyGameDevTools.Extensions
             }
         }
 
-        public static void DestroyAllChildrenComponentsOfType<T>(this GameObject gameObject, bool includeInactive = false) where T : Component => DestroyObjects(gameObject.GetComponentsInChildren<T>(includeInactive));
+        public static void DestroyAllChildrenComponentsOfType<T>(this GameObject gameObject, bool includeInactive = false) where T : Component => ObjectExtensions.DestroyObjects(gameObject.GetComponentsInChildren<T>(includeInactive));
 
-        public static void DestroyAllComponentsOfType<T>(this GameObject gameObject) where T : Component => DestroyObjects(gameObject.GetComponents<T>());
-
-        public static void DestroyObjects(Object[] objects)
-        {
-            var length = objects.Length;
-            for (int i = 0; i < length; i++)
-                Object.Destroy(objects[i]);
-        }
+        public static void DestroyAllComponentsOfType<T>(this GameObject gameObject) where T : Component => ObjectExtensions.DestroyObjects(gameObject.GetComponents<T>());
 
         public static Coroutine DelayCallInPhysicsFrames(this MonoBehaviour monoBehaviour, int frames, System.Action call)
         {
@@ -69,6 +64,21 @@ namespace MyGameDevTools.Extensions
                 yield return realtime ? new WaitForSecondsRealtime(delaySeconds) : new WaitForSeconds(delaySeconds);
                 call?.Invoke();
             }
+        }
+
+        public static List<GameObject> GetRootGameObjects(bool allScenes = false)
+        {
+            var rootObjects = new List<GameObject>();
+            if (allScenes)
+            {
+                var sceneCount = SceneManager.sceneCount;
+                for (int i = 0; i < sceneCount; i++)
+                    rootObjects.AddRange(SceneManager.GetSceneAt(i).GetRootGameObjects());
+            }
+            else
+                SceneManager.GetActiveScene().GetRootGameObjects(rootObjects);
+
+            return rootObjects;
         }
 
         public static bool HasLayer(this LayerMask mask, int layer) => (1 << layer | mask) == mask;
