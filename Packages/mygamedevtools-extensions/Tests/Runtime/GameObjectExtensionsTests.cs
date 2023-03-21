@@ -126,8 +126,8 @@ namespace MyGameDevTools.Extensions.Tests
             Assert.False(mask.HasLayer(LayerMask.NameToLayer("Ignore Raycast")));
         }
 
-        [Test]
-        public void GetRootGameObjects()
+        [UnityTest]
+        public IEnumerator GetRootGameObjects()
         {
             var tempScene = SceneManager.CreateScene("temp");
 
@@ -142,7 +142,7 @@ namespace MyGameDevTools.Extensions.Tests
             var allScenesRootObjects = GameObjectExtensions.GetRootGameObjects(true);
             Assert.AreEqual(allScenesRootObjects.Count, _rootGameObjects.Length + 1);
 
-            SceneManager.UnloadSceneAsync(tempScene);
+            yield return SceneManager.UnloadSceneAsync(tempScene);
         }
 
         public void BuildRandomGameObjectHierarchy(int objectCount, int parentCount, out GameObject[] hierarchy, out GameObject root)
