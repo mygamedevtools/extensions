@@ -3,8 +3,8 @@
   "plugins": [                                                                               
     ["@semantic-release/commit-analyzer", { "preset": "angular" }],                          
     "@semantic-release/release-notes-generator",                                             
-    ["@semantic-release/changelog", { "preset": "angular", "pkgRoot": "Packages/mygamedevtools-extensions"  }],                                
-    ["@semantic-release/npm", { "npmPublish": false }],                      
+    ["@semantic-release/changelog", { "preset": "angular" }],                                
+    ["@semantic-release/npm", { "npmPublish": false, "pkgRoot": "Packages/mygamedevtools-extensions" }],                      
     ["@semantic-release/git", {                                                              
       "assets": ["Packages/mygamedevtools-extensions/package.json", "CHANGELOG.md"],                                            
       "message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"  
