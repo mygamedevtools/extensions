@@ -58,7 +58,7 @@ openupm add com.mygamedevtools.extensions
 Usage
 ---
 
-This package is focused in 3 main areas: Extensions, Simple Tools and Attributes. The purpose of these tools, are to improve the overall Unity Editor experience
+This package is focused in 3 main areas: Extensions, Tooling and Attributes. The purpose of these tools, are to improve the overall Unity Editor experience
 with simple, reliable and maintainable solutions.
 
 ### :large_blue_diamond: Attributes
@@ -106,7 +106,7 @@ public class MyClass : MonoBehaviour
 }
 ```
 
-### :large_blue_diamond: Tools
+### :large_blue_diamond: Tooling
 
 We have **two** tools available:
 
@@ -154,7 +154,7 @@ public static class CheatsEnabler
 
 ### :large_blue_diamond: Extensions
 
-We have a total of **2** extensions available:
+We have a total of **3** extensions available:
 
 #### :large_orange_diamond: Debug Extensions
 
@@ -198,10 +198,9 @@ public class MyClass : MonoBehaviour
 }
 ```
 
-##### :diamond_shape_with_a_dot_inside: Destroy Objects
+##### :diamond_shape_with_a_dot_inside: Destroy Components
 
-Destroys any given array of `UnityEngine.Object` inherited objects, like `MonoBehaviour`, `Component` or `GameObject` types. Pretty cool, right?
-You can also use its siblings: `DestroyAllComponentsOfType` and `DestroyAllChildrenComponentsOfType`
+Destroys the given component type instances in a `UnityEngine.GameObject` or its children.
 
 ```csharp
 public class MyClass : MonoBehaviour
@@ -210,11 +209,40 @@ public class MyClass : MonoBehaviour
     GameObject[] myObjectsToDestroy;
 
     void Start()
-    {
-        GameObjectExtensions.DestroyObjects(myObjectsToDestroy);
-        
+    {        
         gameObject.DestroyAllComponentsOfType<BoxCollider>();
         gameObject.DestroyAllChildrenComponentsOfType<SphereCollider>();
+    }
+}
+```
+
+##### :diamond_shape_with_a_dot_inside: Get Root Game Objects
+
+Gets the root game objects of a scene, or optionally all scenes.
+
+```cs
+public class MyClass : MonoBehaviour
+{
+    void Start()
+    {
+        List<GameObject> allRootObjects = GameObjectExtensions.GetRootGameObjects(true);
+    }
+}
+```
+
+##### :diamond_shape_with_a_dot_inside: Has Layer
+
+Checks if a `LayerMask` contains the given layer index. Useful for physics validations.
+
+```cs
+public class MyClass : MonoBehaviour
+{
+    [SerializeField]
+    LayerMask _mask;
+
+    void Start()
+    {
+        Debug.Log(_mask.HasLayer(gameObject.layer));
     }
 }
 ```
@@ -240,6 +268,51 @@ public class MyClass : MonoBehaviour
     void MyAction()
     {
         Debug.Log("General Kenobi")
+    }
+}
+```
+
+#### :large_orange_diamond: Object Extensions
+
+##### :diamond_shape_with_a_dot_inside: Destroy Objects
+
+Destroy a given array of `UnityEngine.Object`, which could be GameObjects, Components, MonoBehaviours and really any type that inherits from `UnityEngine.Object`. Keep in mind that the object is actually destroyed between the end of the current frame and the beginning of the next one.
+
+```cs
+public class MyClass : MonoBehaviour
+{
+    [SerializeField]
+    Object[] _objectsToDestroy;
+
+    void Start()
+    {
+        ObjectExtensions.DestroyObjects(_objectsToDestroy);
+    }
+}
+```
+
+##### :diamond_shape_with_a_dot_inside: Find Implementation(s) of Type
+
+This is meant to find `interface` implementations. It works like a `FindObjectOfType`, but for `interface`. You can also use the `TryFindImplementationOfType` to return a bool. Keep in mind that the `interface` implementation will also need to inherit from `MonoBehaviour` in order to be found, since it will be searched within GameObject's components.
+
+```cs
+public interface IActionable {}
+
+public class MyAction : MonoBehaviour, IActionable {}
+
+public class MyClass : MonoBehaviour
+{
+    void Start()
+    {
+        // Common usage
+        IActionable implementation = this.FindImplementationOfType<IActionable>();
+        // Explicit usage
+        IActionable implementation = ObjectExtensions.FindImplementationOfType<IActionable>();
+        // Try usage
+        bool implementationExists = ObjectExtensions.TryFindImplementationOfType<IActionable>(out IActionable implementation);
+
+        // For multiple implementations
+        List<IActionable> implementations = ObjectExtensions.FindImplementationsOfType<IActionable>();
     }
 }
 ```
