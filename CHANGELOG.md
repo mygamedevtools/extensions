@@ -1,3 +1,22 @@
+# [2.0.0](https://github.com/mygamedevtools/extensions/compare/1.4.0...2.0.0) (2023-03-24)
+
+
+### Code Refactoring
+
+* update namespaces and assemblies ([20a4d51](https://github.com/mygamedevtools/extensions/commit/20a4d518af09d473851f891eec70a1a73282ab0f))
+
+
+### Features
+
+* add extensions to find interface implements ([a61e665](https://github.com/mygamedevtools/extensions/commit/a61e665e83365c2c43e896f6edccfbfcf76a1154))
+
+
+### BREAKING CHANGES
+
+* additional assemblies and namespaces created
+
+Both GroupGameObjects and ScriptingDefineSymbolsHelper classes were moved to the MyGameDevTools.Tooling namespace and assembly. All the attributes have been moved to the MyGameDevTools.Attributes namespace and assembly.
+
 # [1.4.0](https://github.com/mygamedevtools/extensions/compare/1.3.1...1.4.0) (2022-10-25)
 
 

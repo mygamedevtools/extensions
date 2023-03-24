@@ -1,6 +1,6 @@
 {
   "name": "com.mygamedevtools.extensions",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "displayName": "Extensions",
   "description": "A personal collection of Unity Engine tools, extensions and helpers.",
   "unity": "2019.4",
