@@ -3,33 +3,17 @@ Extensions
 </h1>
 
 <p align=center>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/mygamedevtools/extensions" />
-  </a>
-  <a href="https://codecov.io/github/mygamedevtools/extensions">
-    <img src="https://codecov.io/github/mygamedevtools/extensions/branch/main/graph/badge.svg?token=J4ISVSF390" />
-  </a>
-  <a href="https://github.com/mygamedevtools/extensions/actions/workflows/test.yml">
-    <img src="https://github.com/mygamedevtools/extensions/actions/workflows/test.yml/badge.svg" />
-  </a>
-  <a href="https://github.com/mygamedevtools/extensions/actions/workflows/release.yml">
-    <img src="https://github.com/mygamedevtools/extensions/actions/workflows/release.yml/badge.svg" />
-  </a>
-  <a href="https://github.com/mygamedevtools/extensions/commits/">
-    <img src="https://img.shields.io/github/last-commit/mygamedevtools/extensions" />
-  </a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/mygamedevtools/extensions?color=5189bd" /></a>
+  <a href="https://github.com/mygamedevtools/extensions/releases/latest"><img src="https://img.shields.io/github/v/release/mygamedevtools/extensions?color=5189bd&sort=semver" /></a>
+  <a href="https://openupm.com/packages/com.mygamedevtools.extensions/"><img src="https://img.shields.io/npm/v/com.mygamedevtools.extensions?color=5189bd&label=openupm&registry_uri=https://package.openupm.com" /></a>
+  <a href="https://openupm.com/packages/com.mygamedevtools.extensions/"><img src="https://img.shields.io/badge/dynamic/json?color=5189bd&label=downloads&query=%24.downloads&suffix=%2Fmonth&url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.mygamedevtools.extensions" /></a>
 </p>
 
 <p align=center>
-  <a href="https://openupm.com/packages/com.mygamedevtools.extensions/">
-    <img src="https://img.shields.io/npm/v/com.mygamedevtools.extensions?label=openupm&registry_uri=https://package.openupm.com" />
-  </a>
-  <a href="https://github.com/mygamedevtools/extensions/releases/latest">
-    <img src="https://img.shields.io/github/v/release/mygamedevtools/extensions?sort=semver" />
-  </a>
-  <a href="https://github.com/semantic-release/semantic-release">
-    <img src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release" />
-  </a>
+  <a href="https://codecov.io/github/mygamedevtools/extensions"><img src="https://codecov.io/github/mygamedevtools/extensions/branch/main/graph/badge.svg?token=J4ISVSF390" /></a>
+  <a href="https://github.com/mygamedevtools/extensions/actions/workflows/test.yml"><img src="https://github.com/mygamedevtools/extensions/actions/workflows/test.yml/badge.svg" /></a>
+  <a href="https://github.com/mygamedevtools/extensions/actions/workflows/release.yml"><img src="https://github.com/mygamedevtools/extensions/actions/workflows/release.yml/badge.svg" /></a>
+  <a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release" /></a>
 </p>
 
 <p align=center><i>
@@ -52,14 +36,14 @@ openupm add com.mygamedevtools.extensions
 1. Open `Edit/Project Settings/Package Manager`.
 2. Click <kbd>+</kbd>.
 3. Select `Add package from git URL...`.
-4. Paste `com.mygamedevtools.extensions` into name.
+4. Paste `com.mygamedevtools.extensions` into the name.
 5. Click `Add`.
 
 Usage
 ---
 
-This package is focused in 3 main areas: Extensions, Tooling and Attributes. The purpose of these tools, are to improve the overall Unity Editor experience
-with simple, reliable and maintainable solutions.
+This package is focused on 3 main areas: Extensions, Tooling, and Attributes. The purpose of these tools, is to improve the overall Unity Editor experience
+with simple, reliable, and maintainable solutions.
 
 ### :large_blue_diamond: Attributes
 
@@ -81,7 +65,7 @@ public class MyClass : MonoBehaviour
 
 The `[LabeledArray]` attribute allows you to specify names for array elements, instead of the default `Element #n`. You can
 either use a string array or an Enum to provide the names. If the array element count passes the provided names count, the following
-element names will fallback to the default naming
+element names will fall to the default naming
 
 ```csharp
 public class MyClass : MonoBehaviour
@@ -93,7 +77,7 @@ public class MyClass : MonoBehaviour
 
 #### :large_orange_diamond: SceneField
 
-The `[SceneField]` attribute allows you to drag scene assets to fields in the inspector. You can only use this attribute on **int** fields, 
+The `[SceneField]` attribute allows you to drag scene assets to fields in the inspector. You can only use this attribute on **int** fields 
 since it will store the scene's build index. It does not have any relation with the scene itself, so if you change the build settings it will
 not update its value and will reference a different scene. You can add the scene to the build settings via the inspector after dragging the
 scene to the field if it hasn't been yet
@@ -249,7 +233,7 @@ public class MyClass : MonoBehaviour
 
 ##### :diamond_shape_with_a_dot_inside: Delay Call
 
-Delays an Action after a given amount of time. You can delay in seconds, frames or physics (fixed) frames.
+Delays an Action after a given amount of time. You can delay in seconds, frames, or physics (fixed) frames.
 
 ```csharp
 public class MyClass : MonoBehaviour
@@ -276,7 +260,7 @@ public class MyClass : MonoBehaviour
 
 ##### :diamond_shape_with_a_dot_inside: Destroy Objects
 
-Destroy a given array of `UnityEngine.Object`, which could be GameObjects, Components, MonoBehaviours and really any type that inherits from `UnityEngine.Object`. Keep in mind that the object is actually destroyed between the end of the current frame and the beginning of the next one.
+Destroy a given array of `UnityEngine.Object`, which could be GameObjects, Components, MonoBehaviours, and any type that inherits from `UnityEngine.Object`. Keep in mind that the object is destroyed between the end of the current frame and the beginning of the next one.
 
 ```cs
 public class MyClass : MonoBehaviour
@@ -293,7 +277,7 @@ public class MyClass : MonoBehaviour
 
 ##### :diamond_shape_with_a_dot_inside: Find Implementation(s) of Type
 
-This is meant to find `interface` implementations. It works like a `FindObjectOfType`, but for `interface`. You can also use the `TryFindImplementationOfType` to return a bool. Keep in mind that the `interface` implementation will also need to inherit from `MonoBehaviour` in order to be found, since it will be searched within GameObject's components.
+This is meant to find `interface` implementations. It works like a `FindObjectOfType`, but for `interface`. You can also use the `TryFindImplementationOfType` to return a bool. Keep in mind that the `interface` implementation will also need to inherit from `MonoBehaviour` to be found since it will be searched within GameObject's components.
 
 ```cs
 public interface IActionable {}
